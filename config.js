@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 // 2) ELEGÍ QUÉ MATERIA ES ESTA PÁGINA: "E1" o "E2"
-const MATERIA = "E1";
+const MATERIA = "E2";
 
 // 3) LISTA DE ALUMNOS
 const ALUMNOS_E1 = ["Felipe Montero","Emmanuel Druard Rodríguez","Juan Inti Faversani Sueldo","Martín"];
