@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 // 2) ELEGÍ QUÉ MATERIA ES ESTA PÁGINA: "E1" o "E2"
-const MATERIA = "E1";
+const MATERIA = "E2";
 
 // 3) LISTA DE ALUMNOS
 const ALUMNOS_E1 = ["Druard Rodríguez, Emmanuel","Faversani Sueldo, Juan","Montero, Felipe Gerónimo","Rojas, Martín Gonzalo"];
