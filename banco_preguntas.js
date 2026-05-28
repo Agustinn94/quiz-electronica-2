@@ -57,6 +57,21 @@ const BANCO_E1 = [
   {tipo:"mc",q:"En un divisor de tensión con R1 fija y un LDR, si hay mucha luz (LDR baja su resistencia), la tensión en R1:",o:["Aumenta, porque R1 se queda con la mayor parte de la tensión","Disminuye","No cambia","Se hace cero"],a:0},
   {tipo:"mc",q:"El capacitor electrolítico tiene una característica importante:",o:["Tiene polaridad: si se conecta al revés puede explotar","No tiene polaridad","Mide temperatura","Genera corriente"],a:0},
 
+
+  // ===== EJERCICIOS DE CÁLCULO (usá la calculadora) =====
+  {tipo:"mc",q:"CALCULÁ: Un resistor de 220Ω se conecta a 12V. ¿Cuánta corriente circula? (usá la calculadora)",o:["54.5 mA","2.6 mA","26.4 mA","18.3 mA"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Un resistor de 1kΩ conectado a 5V. ¿Cuánta corriente circula?",o:["5 mA","0.5 mA","50 mA","200 mA"],a:0},
+  {tipo:"mc",q:"CALCULÁ: 3 resistores en serie de 100Ω, 220Ω y 330Ω. ¿Cuál es la resistencia total?",o:["650 Ω","216 Ω","550 Ω","100 Ω"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Dos resistores de 1kΩ en paralelo. ¿Cuál es la resistencia total?",o:["500 Ω","2 kΩ","1 kΩ","250 Ω"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Un resistor de 470Ω conectado a 9V. ¿Qué potencia disipa?",o:["0.17 W","1.9 W","17 W","0.019 W"],a:0},
+  {tipo:"mc",q:"CALCULÁ: 300Ω en serie con un paralelo de dos resistencias de 600Ω. ¿Resistencia total?",o:["600 Ω","900 Ω","1200 Ω","300 Ω"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Con la resistencia total de 600Ω y una fuente de 12V, ¿cuánta corriente sale de la fuente?",o:["20 mA","2 mA","200 mA","50 mA"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Un transformador entrega 12V RMS. ¿Cuál es el voltaje de pico? (Vp = Vrms × √2)",o:["16.97 V","8.49 V","24 V","12 V"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Un transformador entrega 9V RMS. ¿Cuál es el voltaje de pico?",o:["12.73 V","6.36 V","18 V","9 V"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Una batería de 12V con Rs=0.5Ω alimenta una lámpara que consume 2A. ¿Qué voltaje real recibe la lámpara? (V = 12 − I×Rs)",o:["11 V","12 V","10 V","13 V"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Una batería con Rs=5Ω entrega 2A. ¿Cuánta potencia se pierde como calor dentro? (P = I²×Rs)",o:["20 W","10 W","40 W","5 W"],a:0},
+  {tipo:"mc",q:"CALCULÁ: Un LED necesita que su resistencia limite la corriente. Si quedan 10V sobre una R y pasan 20mA, ¿cuánto vale R?",o:["500 Ω","200 Ω","2 kΩ","50 Ω"],a:0},
+
   // ORDENAR
   {tipo:"orden",q:"Ordená las etapas de una fuente de alimentación lineal:",items:["Transformador","Rectificador","Filtro","Regulador"],a:[0,1,2,3]},
   // UNIR
