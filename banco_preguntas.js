@@ -37,18 +37,20 @@ const BANCO_E1 = [
   // DIODO (de la hoja de conceptos)
   {tipo:"mc",q:"Una fuente de 0.5V alimenta un diodo de silicio en serie con una resistencia. ¿Conduce?",o:["No, porque no alcanza el peaje de 0.7V del silicio","Sí, cualquier tensión lo enciende","Sí, pero solo la mitad","Se quema"],a:0},
   {tipo:"mc",q:"Si cambiás un diodo de silicio por uno de germanio (peaje 0.3V) con una fuente de 0.5V:",o:["Ahora conduce, porque supera el peaje del germanio","Sigue sin conducir","Explota","Funciona igual que el de silicio"],a:0},
-  {tipo:"mc",q:"En la 2da aproximación de Malvino, el diodo se comporta como:",o:["Un interruptor con una caída fija de 0.7V","Un interruptor perfecto sin caída","Una resistencia variable","Una fuente de corriente"],a:0},
+  {tipo:"mc",q:"En la 2da aproximación, el diodo de silicio se comporta como:",o:["Un interruptor con una caída fija de 0.7V","Un interruptor perfecto sin caída","Una resistencia variable","Una fuente de corriente"],a:0},
   {tipo:"mc",q:"Circuito: fuente + diodo en directa + resistencia. El voltímetro sobre la resistencia marca 0V. ¿Qué pasó?",o:["El diodo se abrió (cortó) y no deja pasar corriente","El diodo está perfecto","La resistencia se quemó","Falta tensión"],a:0},
   {tipo:"mc",q:"En polarización DIRECTA, ¿qué le pasa a la zona de deplexión (el muro)?",o:["Se hace más angosta y permite la conducción","Se ensancha y bloquea","Desaparece para siempre","No cambia nunca"],a:0},
   {tipo:"mc",q:"En polarización INVERSA, los electrones y huecos:",o:["Son empujados hacia los extremos, el muro se ensancha y no circula corriente","Cruzan la juntura y conduce","Se quedan quietos","Hacen explotar el diodo"],a:0},
   {tipo:"mc",q:"La corriente inversa de fuga en un diodo:",o:["Es muy pequeña pero no es exactamente cero","Es muy grande","Es exactamente cero","Es igual a la directa"],a:0},
 
   // RECTIFICADORES (de la hoja)
-  {tipo:"mc",q:"En un rectificador de puente, para hallar el Vpico real a la salida hay que:",o:["Restarle al Vpico la caída de los 2 diodos que conducen","Sumarle la caída de los diodos","Dividir por 2","Multiplicar por π"],a:0},
+  {tipo:"mc",q:"Para hallar el Vpico real en un rectificador de ONDA COMPLETA: primero multiplicás el valor eficaz (RMS) por raíz de 2, y después:",o:["Le restás 1,4V (las dos caídas de diodo)","Le restás 0,7V","Le sumás 1,4V","No le restás nada"],a:0},
+  {tipo:"mc",q:"Para hallar el Vpico real en un rectificador de MEDIA ONDA: multiplicás el RMS por raíz de 2, y después:",o:["Le restás 0,7V (una sola caída de diodo)","Le restás 1,4V","Le sumás 0,7V","No le restás nada"],a:0},
+  {tipo:"mc",q:"El valor eficaz (RMS) de una tensión es:",o:["El valor que entrega el transformador y que miden los instrumentos","El valor máximo de la onda","El valor de continua","El valor cero"],a:0},
+  {tipo:"mc",q:"Para pasar del valor eficaz (RMS) al valor de pico de una onda senoidal:",o:["Se multiplica el RMS por raíz de 2","Se divide el RMS por 2","Se multiplica por π","Se le resta 0,7"],a:0},
   {tipo:"mc",q:"Si la red es de 50Hz, la frecuencia a la salida de un rectificador de MEDIA ONDA es:",o:["50Hz","100Hz","25Hz","0Hz"],a:0},
   {tipo:"mc",q:"Si la red es de 50Hz, la frecuencia a la salida de un PUENTE completo es:",o:["100Hz","50Hz","25Hz","200Hz"],a:0},
   {tipo:"mc",q:"¿Por qué el puente completo da el doble de frecuencia que la media onda?",o:["Porque aprovecha los dos semiciclos de la onda","Porque usa más diodos","Porque el transformador lo duplica","Porque tiene capacitor"],a:0},
-  {tipo:"mc",q:"Para pasar de un valor RMS (eficaz) al valor de pico de una onda senoidal:",o:["Se multiplica el RMS por raíz de 2","Se divide por 2","Se multiplica por π","Se resta 0.7"],a:0},
   {tipo:"mc",q:"La salida de un puente completo se describe como:",o:["Montañas sucesivas, 100% pulsante","Pulsos positivos espaciados","Una línea recta","Una señal alterna"],a:0},
 
   // SENSORES (de la hoja)
