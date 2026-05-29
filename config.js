@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 // 2) MATERIA DE ESTA PÁGINA: "E1" o "E2"
-const MATERIA = "E1";
+const MATERIA = "E2";
 
 // 3) VERSIÓN (subí este número cada vez que cambies algo,
 //    así a los chicos les avisa que actualicen la página)
