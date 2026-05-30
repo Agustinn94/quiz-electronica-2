@@ -38,7 +38,7 @@ const DRIVE = {
   },
   E2: {
     carpeta: "https://drive.google.com/drive/folders/1xDy_bCfXN46U1x7tstv4C0dXQ7uQEWEP?usp=sharing",
-    teoria:   { t1:"https://drive.google.com/drive/folders/1f3MLid76TcRwvShVT4iwGlEd_tzIM2by?usp=drive_link", t2:"https://drive.google.com/drive/folders/1S0cX1fAXNcHGWXkndVwWa0iWHaCgmAXj?usp=drive_link", t3:"https://drive.google.com/drive/folders/1lgV9Zx8DAi5B8OTifV6qP4pAG738FnbY?usp=drive_link" },
+    teoria:   { t1:"https://drive.google.com/drive/folders/1HcqVm1Kg7llq9B4wNnHLnNzMG1-shWgP?usp=drive_link", t2:"https://drive.google.com/drive/folders/1v9Elgb0S1v13P2Whs2LQNXEG8RtcrCJ0?usp=drive_link", t3:"https://drive.google.com/drive/folders/1Rdkj3huwErJ44RmyQkFFSP823I6hTS3F?usp=drive_link" },
     practica: { t1:"https://drive.google.com/drive/folders/17_vYQ6bw5beqpeDpnxDvI4ltSHOE6WVa?usp=drive_link", t2:"https://drive.google.com/drive/folders/19ppR9VDTl2mmPxpPH3Mt8RKOEvsLoU4D?usp=drive_link", t3:"https://drive.google.com/drive/folders/1eT3QDM-o1ZPf1DSHjw2xoY882xh5h_WI?usp=drive_link" }
   }
 };
