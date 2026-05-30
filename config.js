@@ -33,12 +33,12 @@ const CANTIDAD_PREGUNTAS = 15;
 const DRIVE = {
   E1: {
     carpeta: "https://drive.google.com/drive/folders/1qGRwnk73WPaJh0ual892VsMWDCsY2QJD?usp=sharing",
-    teoria:   { t1:"https://drive.google.com/drive/folders/11ygb3ZjIkE95qoTijYxcoJOIngvcWqSb?usp=sharing", t2:"https://drive.google.com/drive/folders/1uMlZiq4LwlXJOs6fK-OB__dYt1491ijb?usp=sharing", t3:"https://drive.google.com/drive/folders/1hyVhWmgvWvocR15NsflY2AjEkZ9Xa5-d?usp=drive_link" },
-    practica: { t1:"", t2:"", t3:"" }
+    teoria:   { t1:"https://drive.google.com/drive/folders/11ygb3ZjIkE95qoTijYxcoJOIngvcWqSb?usp=drive_link", t2:"https://drive.google.com/drive/folders/1uMlZiq4LwlXJOs6fK-OB__dYt1491ijb?usp=drive_link", t3:"https://drive.google.com/drive/folders/1hyVhWmgvWvocR15NsflY2AjEkZ9Xa5-d?usp=drive_link" },
+    practica: { t1:"https://drive.google.com/drive/folders/1f3MLid76TcRwvShVT4iwGlEd_tzIM2by?usp=drive_link", t2:"https://drive.google.com/drive/folders/1S0cX1fAXNcHGWXkndVwWa0iWHaCgmAXj?usp=sharing", t3:"https://drive.google.com/drive/folders/1lgV9Zx8DAi5B8OTifV6qP4pAG738FnbY?usp=drive_link" }
   },
   E2: {
     carpeta: "https://drive.google.com/drive/folders/1xDy_bCfXN46U1x7tstv4C0dXQ7uQEWEP?usp=sharing",
     teoria:   { t1:"https://drive.google.com/drive/folders/1f3MLid76TcRwvShVT4iwGlEd_tzIM2by?usp=drive_link", t2:"https://drive.google.com/drive/folders/1S0cX1fAXNcHGWXkndVwWa0iWHaCgmAXj?usp=drive_link", t3:"https://drive.google.com/drive/folders/1lgV9Zx8DAi5B8OTifV6qP4pAG738FnbY?usp=drive_link" },
-    practica: { t1:"", t2:"", t3:"" }
+    practica: { t1:"https://drive.google.com/drive/folders/17_vYQ6bw5beqpeDpnxDvI4ltSHOE6WVa?usp=drive_link", t2:"https://drive.google.com/drive/folders/19ppR9VDTl2mmPxpPH3Mt8RKOEvsLoU4D?usp=drive_link", t3:"https://drive.google.com/drive/folders/1eT3QDM-o1ZPf1DSHjw2xoY882xh5h_WI?usp=drive_link" }
   }
 };
