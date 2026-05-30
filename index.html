@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0a0e27">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<title>Electrónica — Inst. Anacleto Tobar</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0a0e27;color:#e0e0e0;min-height:100vh;overflow-x:hidden}
+.hidden{display:none!important}
+.screen{min-height:100vh;padding:16px;max-width:480px;margin:0 auto}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.logo{width:90px;height:auto;margin-bottom:10px;filter:drop-shadow(0 0 12px rgba(0,150,255,.4))}
+h1{font-size:24px;margin-bottom:2px;text-align:center}
+h2{font-size:19px;margin-bottom:4px}
+.sub{color:#7a7fa8;font-size:13px;margin-bottom:18px;text-align:center}
+.menu-btn{display:flex;align-items:center;gap:14px;width:100%;padding:20px;margin-bottom:12px;background:#12173a;border:1px solid #1e2454;border-radius:16px;color:#e0e0e0;cursor:pointer;font-family:inherit;text-align:left;transition:transform .1s;text-decoration:none}
+.menu-btn:active{transform:scale(.98)}
+.menu-btn .ico{font-size:32px}
+.menu-btn .tit{font-size:18px;font-weight:700}
+.menu-btn .des{font-size:12px;color:#7a7fa8}
+.back{background:transparent;color:#7a7fa8;border:1px solid #1e2454;padding:10px 16px;border-radius:8px;cursor:pointer;font-family:inherit;margin-top:8px}
+.update-banner{position:fixed;top:0;left:0;right:0;background:#ff9800;color:#000;padding:12px;text-align:center;font-weight:700;font-size:13px;z-index:200;cursor:pointer;animation:blink 1.2s infinite;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.65}}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#38ef7d;color:#000;padding:12px 20px;border-radius:10px;font-weight:600;font-size:13px;z-index:300;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+
+<!-- AVISO DE ACTUALIZACIÓN -->
+<div id="update-banner" class="update-banner hidden" onclick="actualizarApp()">
+  🔄 Hay una nueva versión. Tocá acá para actualizar.
+</div>
+
+<!-- HOME / MENÚ PRINCIPAL -->
+<div id="screen-home" class="screen center">
+  <img class="logo" src="logo.png" alt="IAT" onerror="this.style.display='none'">
+  <h1 id="home-title" style="background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Electrónica</h1>
+  <p class="sub">Inst. Técnico Privado Ing. Anacleto Tobar — Prof. Lic. Gutiérrez</p>
+  <div style="width:100%">
+    <button class="menu-btn" onclick="mostrar('screen-teoria')">
+      <span class="ico">📚</span>
+      <span><span class="tit">Teoría</span><br><span class="des">Apuntes y presentaciones por trimestre</span></span>
+    </button>
+    <button class="menu-btn" onclick="mostrar('screen-practica')">
+      <span class="ico">✏️</span>
+      <span><span class="tit">Práctica</span><br><span class="des">Trabajos prácticos por trimestre</span></span>
+    </button>
+  </div>
+</div>
+
+<!-- TEORÍA -->
+<div id="screen-teoria" class="screen hidden">
+  <img class="logo" src="logo.png" alt="IAT" onerror="this.style.display='none'" style="display:block;margin:0 auto 10px">
+  <h2 style="text-align:center;color:#90CAF9">📚 Teoría</h2>
+  <p class="sub">Elegí el trimestre. Se abre tu carpeta de Drive.</p>
+  <div id="teoria-links"></div>
+  <button class="back" onclick="mostrar('screen-home')" style="display:block;margin:8px auto">← Volver al menú</button>
+</div>
+
+<!-- PRÁCTICA -->
+<div id="screen-practica" class="screen hidden">
+  <img class="logo" src="logo.png" alt="IAT" onerror="this.style.display='none'" style="display:block;margin:0 auto 10px">
+  <h2 style="text-align:center;color:#90CAF9">✏️ Práctica</h2>
+  <p class="sub">Elegí el trimestre. Se abre tu carpeta de Drive.</p>
+  <div id="practica-links"></div>
+  <button class="back" onclick="mostrar('screen-home')" style="display:block;margin:8px auto">← Volver al menú</button>
+</div>
+
+<script src="config.js"></script>
+<script>
+const _MATERIA = (typeof MATERIA!=="undefined")?MATERIA:"E1";
+const _DRIVE = (typeof DRIVE!=="undefined")?DRIVE:{E1:{},E2:{}};
+const TITULO = _MATERIA==="E1"?"Electrónica 1 — 4° Año":"Electrónica 2 — 5° Año";
+
+function inicializar(){
+  document.getElementById("home-title").textContent = TITULO;
+  construirLinks();
+}
+
+function mostrar(id){
+  ["screen-home","screen-teoria","screen-practica"].forEach(s=>document.getElementById(s).classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+
+function construirLinks(){
+  const d=_DRIVE[_MATERIA]||{};
+  const tri=[["t1","1° Trimestre"],["t2","2° Trimestre"],["t3","3° Trimestre"]];
+  ["teoria","practica"].forEach(sec=>{
+    const cont=document.getElementById(sec+"-links"); if(!cont)return; cont.innerHTML="";
+    const data=d[sec]||{}; let hay=false;
+    tri.forEach(([k,label])=>{
+      if(data[k]){hay=true;const a=document.createElement("a");a.href=data[k];a.target="_blank";a.className="menu-btn";
+        a.innerHTML=`<span class="ico">📁</span><span><span class="tit">${label}</span><br><span class="des">Abrir en Google Drive</span></span>`;cont.appendChild(a);}
+    });
+    if(!hay&&d.carpeta){const a=document.createElement("a");a.href=d.carpeta;a.target="_blank";a.className="menu-btn";
+      a.innerHTML=`<span class="ico">📁</span><span><span class="tit">Carpeta de ${sec==="teoria"?"Teoría":"Práctica"}</span><br><span class="des">Abrir en Google Drive</span></span>`;cont.appendChild(a);}
+    if(!hay&&!d.carpeta)cont.innerHTML='<p style="color:#7a7fa8;text-align:center;font-size:13px">Todavía no hay material cargado para esta sección.</p>';
+  });
+}
+
+function actualizarApp(){
+  // Borra el cache del service worker y recarga con la última versión
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(rs=>{rs.forEach(r=>r.update());});
+  }
+  if('caches' in window){ caches.keys().then(ks=>{ks.forEach(k=>caches.delete(k));location.reload(true);}); }
+  else location.reload(true);
+}
+
+// ── SERVICE WORKER (offline + actualizaciones automáticas) ──
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('sw.js').then(reg=>{
+      reg.update();
+      reg.addEventListener('updatefound',()=>{
+        const nw=reg.installing;
+        nw.addEventListener('statechange',()=>{
+          if(nw.state==='installed'&&navigator.serviceWorker.controller){
+            document.getElementById('update-banner').classList.remove('hidden');
+          }
+        });
+      });
+    }).catch(err=>console.log('SW error:',err));
+  });
+}
+
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",inicializar);
+else inicializar();
+</script>
+</body>
+</html>
